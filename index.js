@@ -1,6 +1,6 @@
-let cluster = require("./miner");
+require("./miner");
 
-
+/*
     const cpus = 1;
 
     for(var i = 0; i < cpus; i++) {
@@ -27,4 +27,4 @@ let cluster = require("./miner");
         console.log("Hashrate: " + totalhashesPerSecond.toFixed(2) + "h/s\nTotal hashes: " + totalhashes);
     }, 1000);
 
-
+*/
