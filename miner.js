@@ -163,15 +163,15 @@ var Miner = {
             do {
             
                 var job = Miner.job;
-                var target = new Uint8Array([255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]);
+                var target = new Uint8Array([255, 255, 255, 255, 255, 255, 255, 255]);
                 var input = new Uint8Array(criptonight.HEAPU8.buffer, criptonight._malloc(84), 84);
                 var output = new Uint8Array(criptonight.HEAPU8.buffer, criptonight._malloc(32), 32);
                 var blob = Miner.hexToBytes(job.blob);
                 input.set(blob);
-console.log(Miner.bytesToHex(output));
+
                 var targetBinary = Miner.hexToBytes(job.target);
 
-                if (targetBinary.length <= 32) {
+                if (targetBinary.length <= 8) {
                     for (var i = 0; i < targetBinary.length; i++)
                         target[target.length - i - 1] = targetBinary[targetBinary.length - i - 1]
 
@@ -187,10 +187,9 @@ console.log(Miner.bytesToHex(output));
                 input[41] = (nonce & 65280) >> 8;
                 input[42] = (nonce & 255) >> 0;
 
-                criptonight._cryptonight_hash(input.byteOffset, output.byteOffset, blob.length);
-                console.log(Miner.bytesToHex(targetBinary));
-                console.log(Miner.bytesToHex(output));
-                console.log(Miner.bytesToHex(target));
+                var hash = criptonight._cryptonight_hash(input.byteOffset, output.byteOffset, blob.length);
+                console.log(hash);
+
                 Miner.hashes++;
                 meetsTarget = Miner.meetsTarget(output, target);
                 elapsed = Date.now() - start
