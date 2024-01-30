@@ -37,6 +37,7 @@ Module['quit'] = function(status, toThrow) {
 };
 Module['preRun'] = [];
 Module['postRun'] = [];
+Module['ENVIRONMENT'] = 'NODE';
 
 // The environment setup code below is customized to use Module.
 // *** Environment setup code ***
