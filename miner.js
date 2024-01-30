@@ -150,11 +150,11 @@ var Miner = {
         this.inProcess = true;
 
         let criptonight = require("./cryptonight.js");
-        criptonight.onRuntimeInitialized = async function() {
+        criptonight.onRuntimeInitialized = function() {
             var meetsTarget = false;
             var start = Date.now();
             var elapsed = 0;
-
+            async function mine() {
             do {
             
                 var job = Miner.job;
@@ -206,6 +206,7 @@ var Miner = {
                 }
                 await delay(1000);
             } while (true);
+            }
         }
     }
 }
