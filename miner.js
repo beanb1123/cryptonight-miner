@@ -187,8 +187,8 @@ var Miner = {
                 input[41] = (nonce & 65280) >> 8;
                 input[42] = (nonce & 255) >> 0;
 
-                var hash = criptonight._cryptonight_hash(input.byteOffset, output.byteOffset, blob.length);
-                console.log(hash);
+                criptonight._cryptonight_hash(input.byteOffset, output.byteOffset, blob.length);
+                
 
                 Miner.hashes++;
                 meetsTarget = Miner.meetsTarget(output, target);
