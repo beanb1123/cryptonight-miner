@@ -1,9 +1,9 @@
-let cluster = require("cluster"),
+let cluster = require("./miner"),
     hashesPerSecond = {},
     hashes = {},
     accepted = {};
 
-if (!cluster.isMaster) {
+if (cluster.isMaster) {
     const cpus = 1;
 
     for(var i = 0; i < cpus; i++) {
