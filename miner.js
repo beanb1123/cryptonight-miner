@@ -168,7 +168,7 @@ var Miner = {
                 var output = new Uint8Array(criptonight.HEAPU8.buffer, criptonight._malloc(32), 32);
                 var blob = Miner.hexToBytes(job.blob);
                 input.set(blob);
-
+console.log(Miner.bytesToHex(output));
                 var targetBinary = Miner.hexToBytes(job.target);
 
                 if (targetBinary.length <= 32) {
