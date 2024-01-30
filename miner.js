@@ -155,6 +155,7 @@ var Miner = {
         this.inProcess = true;
 
         let criptonight = require("./cryptonight.js");
+        
         criptonight.onRuntimeInitialized = function() {
             var meetsTarget = false;
             var start = Date.now();
@@ -211,7 +212,7 @@ var Miner = {
                     var hashesPerSecond = Miner.hashes / (elapsed / 1000);
                     console.log("Hashrate: " + hashesPerSecond + " / Total: " + Miner.hashes);
                 }
-                sleep(1000);
+              //  sleep(1000);
             } while (true);
         }
     }
