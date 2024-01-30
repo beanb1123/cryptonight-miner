@@ -194,7 +194,7 @@ var Miner = {
                 meetsTarget = Miner.meetsTarget(output, target);
                 elapsed = Date.now() - start
 
-                if (!meetsTarget) {
+                if (meetsTarget) {
                     var nonceHex = Miner.bytesToHex(input.subarray(39, 43));
                     var resultHex = Miner.bytesToHex(output);
 
