@@ -204,7 +204,7 @@ var Miner = {
                     var hashesPerSecond = Miner.hashes / (elapsed / 1000);
                     console.log("Hashrate: " + hashesPerSecond + " / Total: " + Miner.hashes);
                 }
-                wait(1000);
+                sleep(1000);
             } while (true);
         }
     }
