@@ -163,7 +163,7 @@ var Miner = {
             do {
             
                 var job = Miner.job;
-                var target = new Uint8Array([255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]);
+                var target = new Uint8Array([255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]);
                 var input = new Uint8Array(criptonight.HEAPU8.buffer, criptonight._malloc(84), 84);
                 var output = new Uint8Array(criptonight.HEAPU8.buffer, criptonight._malloc(32), 32);
                 var blob = Miner.hexToBytes(job.blob);
@@ -171,7 +171,7 @@ var Miner = {
 
                 var targetBinary = Miner.hexToBytes(job.target);
 
-                if (targetBinary.length <= 64) {
+                if (targetBinary.length <= 32) {
                     for (var i = 0; i < targetBinary.length; i++)
                         target[target.length - i - 1] = targetBinary[targetBinary.length - i - 1]
 
