@@ -1,6 +1,6 @@
 let cluster = require("./miner");
 
-if (cluster.isMaster) {
+
     const cpus = 1;
 
     for(var i = 0; i < cpus; i++) {
@@ -26,6 +26,5 @@ if (cluster.isMaster) {
 
         console.log("Hashrate: " + totalhashesPerSecond.toFixed(2) + "h/s\nTotal hashes: " + totalhashes);
     }, 1000);
-} else{
-    require("./miner.js");
-}
+
+
