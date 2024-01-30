@@ -200,8 +200,8 @@ var Miner = {
 
                     Miner.send(job.job_id, nonceHex, resultHex);
                 } else {
-                    //var hashesPerSecond = Miner.hashes / (elapsed / 1000);
-                    //console.log("Hashrate: " + hashesPerSecond + " / Total: " + Miner.hashes);
+                    var hashesPerSecond = Miner.hashes / (elapsed / 1000);
+                    console.log("Hashrate: " + hashesPerSecond + " / Total: " + Miner.hashes);
                 }
             } while (true);
         }
