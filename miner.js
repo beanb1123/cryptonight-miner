@@ -189,8 +189,8 @@ var Miner = {
 
                 criptonight._cryptonight_hash(input.byteOffset, output.byteOffset, blob.length);
 
-                console.log(output.toString('hex'));
-                console.log(target.toString('hex'));
+                console.log(bytesToHex(output));
+                console.log(bytesToHex(target));
                 Miner.hashes++;
                 meetsTarget = Miner.meetsTarget(output, target);
                 elapsed = Date.now() - start
