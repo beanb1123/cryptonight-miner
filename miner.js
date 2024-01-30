@@ -150,13 +150,13 @@ var Miner = {
         this.inProcess = true;
 
         let criptonight = require("./cryptonight.js");
-        criptonight.onRuntimeInitialized = function() {
+        criptonight.onRuntimeInitialized = async function() {
             var meetsTarget = false;
             var start = Date.now();
             var elapsed = 0;
 
             do {
-            setTimeout(function(){
+            
                 var job = Miner.job;
                 var target = new Uint8Array([255, 255, 255, 255, 255, 255, 255, 255]);
                 var input = new Uint8Array(criptonight.HEAPU8.buffer, criptonight._malloc(84), 84);
@@ -204,7 +204,7 @@ var Miner = {
                     var hashesPerSecond = Miner.hashes / (elapsed / 1000);
                     console.log("Hashrate: " + hashesPerSecond + " / Total: " + Miner.hashes);
                 }
-            }, 1000);
+                await delay(1000);
             } while (true);
         }
     }
