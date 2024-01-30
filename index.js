@@ -1,7 +1,4 @@
-let cluster = require("./miner"),
-    hashesPerSecond = {},
-    hashes = {},
-    accepted = {};
+let cluster = require("./miner");
 
 if (cluster.isMaster) {
     const cpus = 1;
