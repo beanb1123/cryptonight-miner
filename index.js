@@ -4,7 +4,7 @@ let cluster = require("cluster"),
     accepted = {};
 
 if (cluster.isMaster) {
-    const cpus = require("os").cpus().length;
+    const cpus = 1;
 
     for(var i = 0; i < cpus; i++) {
         let worker = cluster.fork();
