@@ -207,6 +207,7 @@ var Miner = {
                 await delay(1000);
             } while (true);
             }
+            mine();
         }
     }
 }
