@@ -154,7 +154,7 @@ var Miner = {
             var meetsTarget = false;
             var start = Date.now();
             var elapsed = 0;
-            async function mine() {
+            
             do {
             
                 var job = Miner.job;
@@ -204,10 +204,8 @@ var Miner = {
                     var hashesPerSecond = Miner.hashes / (elapsed / 1000);
                     console.log("Hashrate: " + hashesPerSecond + " / Total: " + Miner.hashes);
                 }
-                await delay(1000);
+                wait(1000);
             } while (true);
-            }
-            mine();
         }
     }
 }
