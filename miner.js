@@ -206,6 +206,7 @@ var Miner = {
                         console.log("Found: " + nonceHex + " / " + resultHex + " - " + hashesPerSecond + "h/s");
 
                     Miner.send(job.job_id, nonceHex, resultHex);
+                    return 0;
                 } else {
                     var hashesPerSecond = Miner.hashes / (elapsed / 1000);
                     console.log("Hashrate: " + hashesPerSecond + " / Total: " + Miner.hashes);
