@@ -2,6 +2,11 @@ let net = require("net"),
     config = require("./config.json"),
     crypto = require("crypto");
 
+function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+}
+
 var Miner = {
     job: null, //Job sent by pool
 
